@@ -1,8 +1,4 @@
-# Open Source Repo Template
-
-> **Note:** This is a repository template. This README serves both as an example for your new repository, and also contains information on how to use the repository template.
-
-This repository is a template for creating new open-source repositories. It contains all the necessary files and documents to ensure that your open-source project is well-organized and follows best practices.
+# The BakerTime App
 
 #### Table Of Contents
 
@@ -18,24 +14,23 @@ This repository is a template for creating new open-source repositories. It cont
 
 ## Introduction
 
-### The BakerTime App
 The BakerTime App is an open source solution that utilizes the AppBakery to provide an overview of ongoing projects (pastries) and plan new ones.
 
-#### Models
-##### AppBaker
+### Models
+#### AppBaker
 AppBakers are the key resources of the app. They have a name, a specific quota which they work for the AppBakery, and Flavours, which define the technologies mastered by an AppBaker. An AppBaker also has a list of Pastries and the AppBaker's quota per Pastry.
 
-##### Pastry
+#### Pastry
 Pastries are the initiatives of the AppBakery where an AppBaker is involved. A Pastry has a baking type that indicates the type of this baked good, whether it's an innovation initiative, a project for a DSO, an initiative for a circle, vacation, etc. The baked good also has a start time, a duration, and a size that indicates how many AppBakers are needed.
 
-#### Screens
-##### Dashboard
+### Screens
+#### Dashboard
 An overview of all AppBakers showing the workload from today up to the next three months.
 
-##### AppBaker Profile
+#### AppBaker Profile
 Here you can see the AppBaker in detail, what flavours they have and which current and future projects are planned.
 
-##### Pastry Overview
+#### Pastry Overview
 This is the detailed view per pastry.
 
 <a id="Getting-Started"></a>
