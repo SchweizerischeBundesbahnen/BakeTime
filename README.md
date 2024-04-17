@@ -18,14 +18,25 @@ This repository is a template for creating new open-source repositories. It cont
 
 ## Introduction
 
-When creating an open-source project, it's important to establish a clear structure and set of guidelines to ensure that the project is maintainable and sustainable. This repository provides a basic template that can be used as a starting point for new projects.
+### The BakerTime App
+The BakerTime App is an open source solution that utilizes the AppBakery to provide an overview of ongoing projects (pastries) and plan new ones.
 
-The template includes the following features:
+#### Models
+##### AppBaker
+AppBakers are the key resources of the app. They have a name, a specific quota which they work for the AppBakery, and Flavours, which define the technologies mastered by an AppBaker. An AppBaker also has a list of Pastries and the AppBaker's quota per Pastry.
 
-- A basic file structure for organizing code, documentation, and related files
-- A CONTRIBUTING.md file with guidelines for contributing to the project
-- A CODE_OF_CONDUCT.md file with guidelines for community behavior
-- A LICENSE.md file with information about the open-source license that applies to the project
+##### Pastry
+Pastries are the initiatives of the AppBakery where an AppBaker is involved. A Pastry has a baking type that indicates the type of this baked good, whether it's an innovation initiative, a project for a DSO, an initiative for a circle, vacation, etc. The baked good also has a start time, a duration, and a size that indicates how many AppBakers are needed.
+
+#### Screens
+##### Dashboard
+An overview of all AppBakers showing the workload from today up to the next three months.
+
+##### AppBaker Profile
+Here you can see the AppBaker in detail, what flavours they have and which current and future projects are planned.
+
+##### Pastry Overview
+This is the detailed view per pastry.
 
 <a id="Getting-Started"></a>
 
@@ -60,11 +71,7 @@ Links to all relevant documentation files, including:
 
 ## License
 
-> Choose a license that meets the organization's legal requirements and supports the sharing and modification of the code.
-> Please follow the internal Open Source guidelines while chosing the License.
-> This repository includes two [suggested license texts](./suggested_licenses) (Apache 2.0 and EPL 2.0). Rename the license you prefer to [LICENSE.md](LICENSE.md) and remove the other one.
-
-This project is licensed under [INSERT LICENSE].
+This project is licensed under GPL v3.0.
 
 <a id="Contributing"></a>
 

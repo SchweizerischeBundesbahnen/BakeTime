@@ -1,4 +1,4 @@
-> **Note:** This is a template. Please make necessary changes and modify the template as per your needs. For reference please use the following resources.
+> **Note:** This is workl in progress and should grow with the project
 
 # Repository Coding Standards
 

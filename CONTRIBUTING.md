@@ -1,5 +1,5 @@
 # Contributing
-> **Note:** This is a template for Contributing.md. Please make necessary changes in the links and content and modify the template as per your needs. 
+> **Note:** This is work in progress
 
 We appreciate all kinds of contributions. The following is a set of guidelines for contributing to this repository on GitHub. 
 These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
