@@ -35,24 +35,18 @@ This is the detailed view per pastry.
 
 <a id="Getting-Started"></a>
 
+## API
+For the backend the [Express framework](https://expressjs.com/) is used.
+
 ## Getting-Started
 
-Instructions for getting started with the repository, for e.g.:
+### API
+To start the backend run the following two comands:
+```
+npm install
+npm start
+```
 
-- Installation instructions
-- Usage instructions
-
-> To use this template please follow the steps as below:
->
-> - If creating via Self Service Portal (WIP)
-> - If Creating via GitHub Interface
->   - Click the "Use this template" button above, select "Create a new repository"
->   - Give your repository a name, and optionally a description. The owner will always be "SchweizerischeBundesbahnen".
->   - Set the visibility of your repository to "Public".
->   - Do not select "Include all branches".
->   - Click the "Create repository from template" button and you're done!
-
-<a id="Documentation"></a>
 
 ## Documentation
 
