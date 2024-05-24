@@ -1,12 +1,13 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var appbakersRouter = require('./routes/appbakers');
-var pastryRouter = require('./routes/pastry');
+const appbakersRouter = require('./routes/appbakers');
+const pasteriesRouter = require('./routes/pasteries');
 
-var app = express();
+const app = express();
+const port = 8080
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -15,6 +16,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/appbakers', appbakersRouter);
-app.use('/pastry', pastryRouter);
+app.use('/pasteries', pasteriesRouter);
 
-module.exports = app;
+app.listen(port, () => {
+    console.log(`BakeTime listening on port ${port}`)
+})

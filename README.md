@@ -41,7 +41,7 @@ For the backend the [Express framework](https://expressjs.com/) is used.
 ## Getting-Started
 
 ### API
-To start the backend run the following two comands:
+To start the backend run the following two commands:
 ```
 npm install
 npm start
