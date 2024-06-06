@@ -2,13 +2,24 @@
 
 #### Table Of Contents
 
-- [Introduction](#Introduction)
-- [Getting Started](#Getting-Started)
-- [Contributing](#Contributing)
-- [Documentation](#Documentation)
-- [Code of Conduct](#code-of-conduct)
-- [Coding Standards](#coding-standards)
-- [License](#License)
+- [The BakerTime App](#the-bakertime-app)
+      - [Table Of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+    - [Models](#models)
+      - [AppBaker](#appbaker)
+      - [Pastry](#pastry)
+    - [Screens](#screens)
+      - [Dashboard](#dashboard)
+      - [AppBaker Profile](#appbaker-profile)
+      - [Pastry Overview](#pastry-overview)
+  - [API](#api)
+  - [Getting-Started](#getting-started)
+    - [API](#api-1)
+  - [Documentation](#documentation)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Coding Standards](#coding-standards)
+  - [Code of Conduct](#code-of-conduct)
 
 <a id="Introduction"></a>
 
@@ -38,13 +49,26 @@ This is the detailed view per pastry.
 ## API
 For the backend the [Express framework](https://expressjs.com/) is used.
 
+## Frontend
+For the frontend the [Vue.js framework](https://vuejs.org/) with typescript transpilation is used.
+
 ## Getting-Started
 
 ### API
-To start the backend run the following two commands:
+To start the backend run the following commands from the root dir:
+```
+cd api
+npm install
+node app.js
+```
+
+### Frontend
+To get started locally, add a .env file at the root of the `frontend` dir with the `VITE_BACKEND_URL` var pointing to the webserver hosted locally above.
+
+Then run the following commands (from `./frontend`):
 ```
 npm install
-npm start
+npm run dev
 ```
 
 
