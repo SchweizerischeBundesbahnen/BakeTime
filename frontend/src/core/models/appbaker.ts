@@ -1,4 +1,4 @@
-import type { Pastry } from './pastery'
+import type { Pastry } from './pastry'
 
 export interface AppBaker {
   readonly id: string
