@@ -21,7 +21,7 @@ exports.addPastry = (req, res) => {
 exports.updatePastry = (req, res) => {
     const pastry = Data.pasteries.find(p => p.id === parseInt(req.params.id));
     if (!pastry) return res.status(404).send('The pastry with the given ID was not found.');
-
+    pastry.name = req.body.name;
     pastry.bakingType = req.body.bakingType;
     pastry.startTime = req.body.startTime;
     pastry.duration = req.body.duration;
