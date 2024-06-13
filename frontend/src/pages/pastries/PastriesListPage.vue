@@ -1,6 +1,6 @@
 <template>
   <LoadingWrapper :state="state" :reload="doReload">
-    <PastriesListView :pastries="data" @added="doReload"></PastriesListView>
+    <PastriesListView :pastries="data" @added="doReload" @pastryUpdated="doReload"></PastriesListView>
   </LoadingWrapper>
 </template>
 
