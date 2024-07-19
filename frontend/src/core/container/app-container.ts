@@ -7,6 +7,7 @@ import GetAppBakersUseCase from '../use-cases/app-bakers/get-app-bakers.use-case
 import GetPastriesUseCase from '../use-cases/pastries/get-pastries.use-case'
 import AddPastryUseCase from '../use-cases/pastries/add-pastry.use-case'
 import UpdatePastryUseCase from '../use-cases/pastries/update-pastry.use-case'
+import DeletePastryUseCase from '../use-cases/pastries/delete-pastry.use-case'
 
 export const AppContainerKey = {
   httpClient: Symbol('httpClient') as InjectionKey<HttpClient>,
@@ -14,7 +15,8 @@ export const AppContainerKey = {
   getAppBakersUseCase: Symbol('getAppBakersUseCase') as InjectionKey<GetAppBakersUseCase>,
   getPastriesUseCase: Symbol('getPastriesUseCase') as InjectionKey<GetPastriesUseCase>,
   addPastryUseCase: Symbol('addPastryUseCase') as InjectionKey<AddPastryUseCase>,
-  updatePastryUseCase: Symbol('updatePastryUseCase') as InjectionKey<UpdatePastryUseCase>
+  updatePastryUseCase: Symbol('updatePastryUseCase') as InjectionKey<UpdatePastryUseCase>,
+  deletePastryUseCase: Symbol('deletePastryUseCase') as InjectionKey<DeletePastryUseCase>
 }
 
 const appContainerDefinition: ContainerDefinition<typeof AppContainerKey> = {
@@ -35,6 +37,9 @@ const appContainerDefinition: ContainerDefinition<typeof AppContainerKey> = {
   },
   updatePastryUseCase({ remoteUseCaseProxy }) {
     return new UpdatePastryUseCase(remoteUseCaseProxy)
+  },
+  deletePastryUseCase({ remoteUseCaseProxy }) {
+    return new DeletePastryUseCase(remoteUseCaseProxy)
   }
 }
 

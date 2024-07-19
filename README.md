@@ -61,6 +61,10 @@ cd api
 npm install
 node app.js
 ```
+To enable log levels below info use this command:
+````
+LOG_LEVEL=debug node app.js
+````
 
 ### Frontend
 To get started locally, add a .env file at the root of the `frontend` dir with the `VITE_BACKEND_URL` var pointing to the webserver hosted locally above.
