@@ -21,6 +21,10 @@ export interface ApiResponseError {
   constraints: Map<string, string>
 }
 
+export interface NamedInput {
+  name: string
+}
+
 export default class RemoteUseCaseProxy {
   constructor(private httpClient: HttpClient) {}
 

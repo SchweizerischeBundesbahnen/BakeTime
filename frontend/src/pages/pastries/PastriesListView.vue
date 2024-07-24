@@ -4,9 +4,12 @@
       <div @click="selectPastry(pastry)" style="cursor: pointer" :class="{'bg-sbb-red border border-transparent text-white px-4 py-3 rounded-full': selectedPastry?.id === pastry.id}">{{ pastry.name }}</div>
     </div>
     <div class="flex flex-row gap-5 mt-5">
-        <input v-model="newName" placeholder="New Pastry Name" />
+        <input v-model="newName" placeholder="New Pastry Name" class="text-black" />
         <PrimaryButton v-if="selectedPastry == null" :disabled="newName.length <= 0" @click="savePastry">Create</PrimaryButton>
-      <PrimaryButton v-else :disabled="newName.length <= 0" @click="updatePastry">Update</PrimaryButton>
+      <div v-else>
+        <PrimaryButton :disabled="newName.length <= 0" @click="updatePastry">Update</PrimaryButton>
+        <PrimaryButton @click="deletePastry">Delete</PrimaryButton>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +24,7 @@ import {ResponseState} from "@/core/use-cases/remote-use-case-proxy";
 
 const addPastryUseCase = injectStrict(AppContainerKey.addPastryUseCase)
 const updatePastryUseCase = injectStrict(AppContainerKey.updatePastryUseCase)
+const deletePastryUseCase = injectStrict(AppContainerKey.deletePastryUseCase)
 const { savingState, savedData, save } = useSaving<void>()
 
 const newName = ref('')
@@ -53,6 +57,13 @@ const selectPastry = (pastry: Pastry) => {
 
 const updatePastry = async () => {
   const response = await updatePastryUseCase.execute(selectedPastry.value!.id, newName.value)
+  if (response.status === ResponseState.Success) {
+    emit('pastryUpdated')
+  }
+}
+
+const deletePastry = async () => {
+  const response = await deletePastryUseCase.execute(selectedPastry.value!.id, newName.value)
   if (response.status === ResponseState.Success) {
     emit('pastryUpdated')
   }

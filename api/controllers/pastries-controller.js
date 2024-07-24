@@ -1,41 +1,43 @@
-const Data = require('../data/data')
-const Pastry = require('../models/pastery');
+const Pastry = require('../models/pastry');
+const store = require('../persistence/pastries-persistence');
 
-exports.getPastries = (req, res) => {
-    res.json(Data.pasteries);
+exports.getPastries = async (req, res) => {
+    res.json(store.data);
 };
 
-exports.getPastry = (req, res) => {
-    const pastry = Data.pasteries.find(p => p.id === parseInt(req.params.id));
+exports.getPastry = async (req, res) => {
+    const pastry = store.data.find(p => p.id === parseInt(req.params.id));
     if (!pastry) return res.status(404).send('The pastry with the given ID was not found.');
     res.send(pastry);
 };
 
-exports.addPastry = (req, res) => {
-    const pastry = new Pastry(Data.pasteries.length + 1, req.body.name);
-    Data.pasteries.push(pastry);
+exports.addPastry = async (req, res) => {
+    const pastry = new Pastry(store.data.length + 1, req.body.name);
+    await store.add(pastry);
 
     res.status(204).send();
 };
 
-exports.updatePastry = (req, res) => {
-    const pastry = Data.pasteries.find(p => p.id === parseInt(req.params.id));
+exports.updatePastry = async (req, res) => {
+    const pastry = store.data.find(p => p.id === parseInt(req.params.id));
     if (!pastry) return res.status(404).send('The pastry with the given ID was not found.');
     pastry.name = req.body.name;
     pastry.bakingType = req.body.bakingType;
     pastry.startTime = req.body.startTime;
     pastry.duration = req.body.duration;
     pastry.size = req.body.size;
+    await store.set(store.data);
 
     res.status(204).send();
 };
 
-exports.deletePastry = (req, res) => {
-    const pastry = Data.pasteries.find(p => p.id === parseInt(req.params.id));
+exports.deletePastry = async (req, res) => {
+    const pastry = store.data.find(p => p.id === parseInt(req.params.id));
     if (!pastry) return res.status(404).send('The pastry with the given ID was not found.');
 
-    const index = Data.pasteries.indexOf(pastry);
-    Data.pasteries.splice(index, 1);
+    const index = store.data.indexOf(pastry);
+    store.data.splice(index, 1);
+    await store.set(store.data);
 
     res.status(204).send();
 };
