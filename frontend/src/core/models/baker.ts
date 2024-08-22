@@ -1,6 +1,6 @@
 import type { Pastry } from './pastry'
 
-export interface AppBaker {
+export interface Baker {
   readonly id: string
   readonly name: string
   readonly quota: string

@@ -1,5 +1,5 @@
 const express = require('express');
-const bakersController = require('../controllers/appbakers-controller');
+const bakersController = require('../controllers/bakers-controller');
 const router = express.Router();
 
 router.get('/', bakersController.getBakers);

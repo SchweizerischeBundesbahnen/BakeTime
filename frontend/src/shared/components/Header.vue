@@ -9,16 +9,15 @@
 
     <div class="header-right">
       <RouterLink to="/about" class="nav-link">What's bakin'?</RouterLink>
-      <RouterLink to="/appbakers" class="nav-link">AppBakers</RouterLink>
+      <RouterLink to="/bakers" class="nav-link">Bakers</RouterLink>
       <RouterLink to="/pastries" class="nav-link">Pastries</RouterLink>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { RouterLink } from 'vue-router';
 export default {
-  name: 'Header',
+  name: 'NavigationHeader',
 };
 </script>
 

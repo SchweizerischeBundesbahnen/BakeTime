@@ -27,7 +27,7 @@ import { ResponseState } from '@/core/use-cases/remote-use-case-proxy'
 const addPastryUseCase = injectStrict(AppContainerKey.addPastryUseCase)
 const updatePastryUseCase = injectStrict(AppContainerKey.updatePastryUseCase)
 const deletePastryUseCase = injectStrict(AppContainerKey.deletePastryUseCase)
-const { savingState, savedData, save } = useSaving<void>()
+const { savingState, save } = useSaving<void>()
 
 const newName = ref('')
 const selectedPastry: Ref<Pastry | null> = ref(null)

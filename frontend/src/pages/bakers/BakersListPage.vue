@@ -1,6 +1,6 @@
 <template>
   <LoadingWrapper :state="state" :reload="doReload">
-    <AppBakersListView :app-bakers="data"></AppBakersListView>
+    <BakersListView :bakers="data" @added="doReload" @updated="doReload" @deleted="doReload"></BakersListView>
   </LoadingWrapper>
 </template>
 
@@ -8,21 +8,21 @@
 import { AppContainerKey } from '@/core/container/app-container'
 import { injectStrict } from '@/core/container/inject'
 import LoadingWrapper from '@/shared/components/LoadingWrapper.vue'
-import AppBakersListView from './AppBakersListView.vue'
+import BakersListView from './BakersListView.vue'
 import { useLoading } from '../../shared/functions/use-loading'
-import type { AppBaker } from '../../core/models/appbaker'
+import type { Baker } from '../../core/models/baker'
 
-const getAppBakersListUseCase = injectStrict(AppContainerKey.getAppBakersUseCase)
+const getBakersListUseCase = injectStrict(AppContainerKey.getBakersUseCase)
 
-const { state, data, load } = useLoading<AppBaker[]>()
+const { state, data, load } = useLoading<Baker[]>()
 
 load(() => {
-  return getAppBakersListUseCase.execute()
+  return getBakersListUseCase.execute()
 })
 
 const doReload = () => {
   load(() => {
-    return getAppBakersListUseCase.execute()
+    return getBakersListUseCase.execute()
   })
 }
 </script>

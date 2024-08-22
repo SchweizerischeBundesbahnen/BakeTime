@@ -15,7 +15,8 @@
   "dependencies": {
     "@vueuse/core": "^10.7.2",
     "axios": "^1.7.4",
-    "postcss": "^8.4.35"
+    "postcss": "^8.4.35",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

@@ -1,4 +1,4 @@
-class AppBaker {
+class Baker {
     constructor(id, name, quota, flavours, pastries) {
         this.id = id;
         this.name = name;
@@ -8,4 +8,4 @@ class AppBaker {
     }
 }
 
-module.exports = AppBaker;
+module.exports = Baker;

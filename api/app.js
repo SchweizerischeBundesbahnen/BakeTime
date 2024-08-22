@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
-const appbakersRouter = require('./routes/appbakers');
+const bakersRouter = require('./routes/bakers');
 const pasteriesRouter = require('./routes/pastries');
 const aboutRouter = require('./routes/about');
 const {morganMiddleware, named} = require('./logger');
@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/appbakers', appbakersRouter);
+app.use('/bakers', bakersRouter);
 app.use('/pastries', pasteriesRouter);
 app.use('/about', aboutRouter);
 

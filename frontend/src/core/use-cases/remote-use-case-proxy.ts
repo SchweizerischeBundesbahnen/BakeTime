@@ -1,5 +1,6 @@
 import type { HttpClient } from '@/core/http/http-client'
 import type { AxiosRequestConfig, ResponseType as AxiosResponseType } from 'axios'
+import type { Pastry } from '../models/pastry'
 
 export enum ResponseState {
   Success,
@@ -25,6 +26,13 @@ export interface NamedInput {
   name: string
 }
 
+export interface BakerInput {
+  name: string
+  quota: string
+  flavours: string[]
+  pastries: Pastry[]
+}
+
 export default class RemoteUseCaseProxy {
   constructor(private httpClient: HttpClient) {}
 
@@ -40,7 +48,7 @@ export default class RemoteUseCaseProxy {
       url: '/api/' + this.createUrl(endpoint, input)
     }
 
-    if (method !== 'get') {
+    if (method !== 'get' && method !== 'delete') {
       requestConfig.data = input
     } else {
       requestConfig.timeout = 10000

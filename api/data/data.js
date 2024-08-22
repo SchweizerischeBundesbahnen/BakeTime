@@ -1,4 +1,4 @@
-const AppBaker = require('../models/appbaker');
+const AppBaker = require('../models/baker.js');
 const pastries = require('../persistence/pastries-persistence');
 
 exports.appBakers = [
