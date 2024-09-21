@@ -8,7 +8,7 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "~4.19.2",
+    "express": "~4.20.0",
     "morgan": "~1.9.1",
     "node-persist": "^4.0.2",
     "winston": "^3.13.1"
